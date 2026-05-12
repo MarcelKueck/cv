@@ -1,0 +1,204 @@
+\documentclass[11pt,a4paper]{article}
+
+%---------------------------------------------------------------------
+% PACKAGES
+%---------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage{libertine}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+%---------------------------------------------------------------------
+% LAYOUT
+%---------------------------------------------------------------------
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.05}
+\pagestyle{empty}
+
+\definecolor{darkgray}{HTML}{2a2a2a}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkgray,
+    urlcolor=darkgray,
+    pdftitle={Marcel Kück - Curriculum Vitae},
+    pdfauthor={Marcel Kück}
+}
+
+% Section heading style
+\titleformat{\section}
+    {\large\scshape\bfseries}
+    {}{0pt}{}
+    [\vspace{-0.35em}\noindent\rule{\linewidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{1.2em}{0.45em}
+
+% Bullet list spacing
+\setlist[itemize]{
+    leftmargin=1.3em,
+    itemsep=0.2em,
+    topsep=0.3em,
+    parsep=0pt,
+    label=\textbullet
+}
+
+%---------------------------------------------------------------------
+% CUSTOM COMMANDS
+%---------------------------------------------------------------------
+% \cventry{Organisation}{Location}{Dates}
+\newcommand{\cventry}[3]{%
+    \begin{tabularx}{\textwidth}{@{}Xr@{}}
+        \textbf{#1}, \textit{#2} & #3 \\
+    \end{tabularx}%
+    \vspace{-0.35em}\par%
+}
+
+% \cvitem{Name}{Dates}  (no location)
+\newcommand{\cvitem}[2]{%
+    \begin{tabularx}{\textwidth}{@{}Xr@{}}
+        \textbf{#1} & #2 \\
+    \end{tabularx}%
+    \vspace{-0.35em}\par%
+}
+
+%---------------------------------------------------------------------
+% DOCUMENT
+%---------------------------------------------------------------------
+\begin{document}
+
+%-- HEADER -----------------------------------------------------------
+\begin{center}
+    {\Huge\scshape\bfseries Marcel Kück}\\[0.5em]
+    {\small
+        Munich, Germany \enspace$\bullet$\enspace
+        \href{mailto:kueck.marcel@gmail.com}{kueck.marcel@gmail.com} \enspace$\bullet$\enspace
+        +49 172 273 8908\\[0.15em]
+        \href{https://www.linkedin.com/in/marcel-kueck}{LinkedIn} \enspace$\bullet$\enspace
+        \href{https://github.com/MarcelKueck}{GitHub} \enspace$\bullet$\enspace
+        \href{https://www.marcelkueck.dev/}{marcelkueck.dev}
+    }
+\end{center}
+
+%-- RESEARCH INTERESTS ----------------------------------------------
+\section*{Research Interests}
+
+Physical intelligence and embodied AI, with a particular focus on tendon-driven and musculoskeletal actuation. Interested in the intersection of engineered biological tissue and robotic control: how learned controllers can be coupled to soft, biologically inspired actuators. Prior work includes neural-network-based control of a tendon-driven humanoid arm, imitation learning for bimanual manipulation, and hardware--software integration for humanoid platforms.
+
+%-- EDUCATION --------------------------------------------------------
+\section*{Education}
+
+\cventry{Technical University of Munich}{Munich, Germany}{10.2019 -- 05.2024}
+B.Sc.\ Computer Science. Specialization in Robotics and Artificial Intelligence.
+\begin{itemize}
+    \item Bachelor's thesis: \textit{Implementation and Analysis of a Neural Network-Based Control Algorithm for Optimizing Joint-Space Trajectory Tracking for a Musculoskeletal Tendon-Driven Humanoid Robot Arm}. Conducted at Devanthro; supervised by the \href{https://www.ce.cit.tum.de/en/air/home/}{Chair of Robotics, Artificial Intelligence and Real-Time Systems} (Prof.\ Alois Knoll).
+    \item Member of \href{https://www.tum-ai.com/}{TUM.AI}, Software Development department.
+\end{itemize}
+
+\vspace{0.4em}
+\cventry{University of Oxford}{Oxford, United Kingdom}{05.2024 -- 07.2024}
+Machine Learning Summer School. Coursework and research seminars on reinforcement learning, generative AI, and machine learning in medicine. Selective admission (7\%).
+
+\vspace{0.4em}
+\cvitem{Google Machine Learning Bootcamp Europe}{07.2022 -- 11.2022}
+Three-month programme on applied machine learning. Selective admission ($\sim$10\%).
+
+%-- RESEARCH EXPERIENCE ----------------------------------------------
+\section*{Research Experience}
+
+\cventry{Devanthro}{Munich, Germany}{03.2026 -- Present}
+\textit{Affiliated Researcher (project-based)}
+\begin{itemize}
+    \item Conducting independent research on control and embodied AI for Robody 5.0, the next-generation humanoid platform built on the OpenArm bimanual robotic arm.
+    \item Building an end-to-end pipeline from VR-based teleoperation through LeRobot policy training to on-hardware deployment.
+    \item Investigating data-efficient imitation learning for bimanual manipulation.
+\end{itemize}
+
+\vspace{0.4em}
+\cventry{Devanthro}{Munich, Germany}{10.2022 -- 08.2024}
+\textit{Research Student \& Founder's Associate}
+\begin{itemize}
+    \item Conducted research on neural-network-based control for tendon-driven humanoid arms (Robody 3.0), culminating in the bachelor's thesis on joint-space trajectory tracking for a musculoskeletal tendon-driven arm.
+    \item Co-developed Robody 4.0: assisted in mechanical assembly, contributed CAD work in Fusion 360, and authored a Python script for parametric design of the elastic hull (``skin'') of the Viper arm.
+    \item Supported the founders across fundraising, strategy, and general operations as Founder's Associate.
+\end{itemize}
+
+%-- INDUSTRY EXPERIENCE ----------------------------------------------
+\section*{Industry Experience}
+
+\cventry{MDK Engineering}{Munich, Germany}{01.2026 -- Present}
+\textit{Founder}
+\begin{itemize}
+    \item Solo AI and robotics consultancy providing AI integration and workflow automation as a service to SMB and enterprise clients across multiple sectors.
+    \item Designs and delivers retrieval-augmented generation systems, conversational agents, and AI-powered internal tools tailored to client domains.
+    \item Builds automation pipelines on n8n and Make to integrate LLM and ML capabilities into client business processes and operations.
+\end{itemize}
+
+\vspace{0.4em}
+\cventry{Rechnungs-API \normalfont{\small(\href{https://www.rechnungs-api.de}{rechnungs-api.de})}}{Munich, Germany}{02.2026 -- Present}
+\textit{Co-Founder \& CEO}
+\begin{itemize}
+    \item Co-founded a B2B invoicing API; built and operated with a two-person team.
+    \item Active paying customers; approximately 1{,}000 daily visits.
+    \item Responsible for product direction, technical architecture, and go-to-market.
+\end{itemize}
+
+\vspace{0.4em}
+\cventry{ShareYourSpace \normalfont{\small(\href{https://www.shareyourspace.com}{shareyourspace.com})}}{Munich, Germany}{02.2025 -- 01.2026}
+\textit{Co-Founder \& COO}
+\begin{itemize}
+    \item Co-founded a marketplace for shared and flexible office space, an Airbnb-style platform for the coworking sector.
+    \item Assumed day-to-day operational and product leadership during the company's final year.
+    \item Led the sale of the company and software platform to Pixida GmbH, an existing client.
+\end{itemize}
+
+\vspace{0.4em}
+\cventry{Siemens AG}{Munich, Germany}{09.2021 -- 12.2023}
+\textit{Software Engineer, \href{https://sgi.siemens.com/home}{Siemens SGI}}
+\begin{itemize}
+    \item Designed and shipped a recommender system serving 50{,}000+ digital resources to 300{,}000+ users.
+    \item Built machine-learning and web features across the SGI platform.
+    \item Stack: Python, NumPy, TensorFlow, SQL, TypeScript, JavaScript, Angular.
+\end{itemize}
+
+%-- PERSONAL PROJECTS ------------------------------------------------
+\section*{Personal Projects}
+
+\textbf{RustyRobots:} Open-source robotics framework for embodied AI in Rust; modular crates for perception, control, and simulation integration. \href{[link]}{[link]}
+
+\vspace{0.25em}
+\textbf{RustML:} Open-source machine-learning framework in Rust; tensor operations, automatic differentiation, and inference. \href{[link]}{[link]}
+
+\vspace{0.25em}
+\textbf{LeRobot SO-101 Manipulator:} End-to-end vision-language-action policy training and on-hardware deployment on the SO-101 arm using the LeRobot framework. \href{[link]}{[link]}
+
+\vspace{0.25em}
+\textbf{Roasterio:} Smart coffee-bean roaster combining a custom sensor stack with automatic roast-profile optimization.
+
+\vspace{0.25em}
+\textbf{LaMarcello:} Retrofit controller converting classic espresso machines into smart, app-connected appliances; PID temperature control and flow profiling.
+
+\vspace{0.25em}
+\textbf{Murph:} Online medical consultation platform pairing medical students with elderly users for accessible primary advice.
+
+\vspace{0.25em}
+\textbf{Marie Lou Coffee:} Personal coffee-roasting venture; small-batch artisanal roasting, exploring a commercial launch.
+
+%-- TECHNICAL SKILLS -------------------------------------------------
+\section*{Technical Skills}
+
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\textbf{Programming:} & Python, Rust, C++, TypeScript, JavaScript \\[0.15em]
+\textbf{Machine Learning \& Robotics:} & PyTorch, TensorFlow, LeRobot, ROS\,2, NVIDIA Isaac Sim, NVIDIA Cosmos \\[0.15em]
+\textbf{Hardware \& Tooling:} & Linux, Git, Docker, Fusion 360, SLA printing, Jetson, sensor integration \\
+\end{tabularx}
+
+%-- LANGUAGES --------------------------------------------------------
+\section*{Languages}
+
+German (native) \enspace$\bullet$\enspace English (fluent, C1--C2)
+
+\end{document}
