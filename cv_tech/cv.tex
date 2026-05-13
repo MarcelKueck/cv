@@ -1,0 +1,200 @@
+\documentclass[11pt,a4paper]{article}
+
+%---------------------------------------------------------------------
+% PACKAGES
+%---------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,top=1.8cm,bottom=1.8cm,left=1.8cm,right=1.8cm]{geometry}
+\usepackage{libertine}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+%---------------------------------------------------------------------
+% LAYOUT
+%---------------------------------------------------------------------
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.0}
+\pagestyle{empty}
+
+\definecolor{darkgray}{HTML}{2a2a2a}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkgray,
+    urlcolor=darkgray,
+    pdftitle={Marcel Kück - Curriculum Vitae},
+    pdfauthor={Marcel Kück}
+}
+
+% Section heading style
+\titleformat{\section}
+    {\large\scshape\bfseries}
+    {}{0pt}{}
+    [\vspace{-0.35em}\noindent\rule{\linewidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{0.8em}{0.4em}
+
+% Bullet list spacing
+\setlist[itemize]{
+    leftmargin=1.3em,
+    itemsep=0.1em,
+    topsep=0.2em,
+    parsep=0pt,
+    label=\textbullet
+}
+
+%---------------------------------------------------------------------
+% CUSTOM COMMANDS
+%---------------------------------------------------------------------
+% \cventry{Organisation}{Location}{Dates}
+\newcommand{\cventry}[3]{%
+    \begin{tabularx}{\textwidth}{@{}Xr@{}}
+        \textbf{#1}, \textit{#2} & #3 \\
+    \end{tabularx}%
+    \vspace{-0.35em}\par%
+}
+
+% \cvitem{Name}{Dates}  (no location)
+\newcommand{\cvitem}[2]{%
+    \begin{tabularx}{\textwidth}{@{}Xr@{}}
+        \textbf{#1} & #2 \\
+    \end{tabularx}%
+    \vspace{-0.35em}\par%
+}
+
+%---------------------------------------------------------------------
+% DOCUMENT
+%---------------------------------------------------------------------
+\begin{document}
+
+%-- HEADER -----------------------------------------------------------
+\begin{center}
+    {\Huge\scshape\bfseries Marcel Kück}\\[0.5em]
+    {\small
+        Munich, Germany \enspace$\bullet$\enspace
+        \href{mailto:kueck.marcel@gmail.com}{kueck.marcel@gmail.com} \enspace$\bullet$\enspace
+        +49 172 273 8908\\[0.15em]
+        \href{https://www.linkedin.com/in/marcel-kueck}{LinkedIn} \enspace$\bullet$\enspace
+        \href{https://github.com/MarcelKueck}{GitHub} \enspace$\bullet$\enspace
+        \href{https://www.marcelkueck.dev/}{marcelkueck.dev}
+    }
+\end{center}
+
+%-- SUMMARY ----------------------------------------------------------
+\section*{Summary}
+
+AI and robotics engineer running two active ventures (MDK Engineering, Rechnungs-API) following a prior co-founded acquisition (ShareYourSpace, sold to Pixida GmbH in 2026). Affiliated researcher at Devanthro on humanoid manipulation; upcoming visiting researcher at the University of Oxford on soft bioreactor design for tissue engineering. Production ML background at Siemens, where I shipped a recommender system serving 300{,}000+ users.
+
+%-- INDUSTRY EXPERIENCE ----------------------------------------------
+\section*{Industry Experience}
+
+\cventry{MDK Engineering \normalfont{\small(\href{https://www.marcelkueck.dev/}{marcelkueck.dev})}}{Munich, Germany}{01.2026 -- Present}
+\textit{Founder}
+\begin{itemize}
+    \item Solo AI and robotics consultancy delivering AI integration and workflow automation to SMB and enterprise clients across multiple sectors.
+    \item Ship retrieval-augmented generation systems, conversational agents, and AI-powered internal tools tailored to client domains.
+    \item Build automation pipelines on n8n and Make integrating LLM and ML capabilities into client business processes.
+\end{itemize}
+
+\vspace{0.25em}
+\cventry{Rechnungs-API \normalfont{\small(\href{https://www.rechnungs-api.de}{rechnungs-api.de})}}{Munich, Germany}{02.2026 -- Present}
+\textit{Co-Founder and CEO}
+\begin{itemize}
+    \item Co-founded a B2B invoicing API, operating with a two-person team.
+    \item Serving active paying customers with approximately 1{,}000 daily visits.
+    \item Lead product direction, technical architecture, and go-to-market.
+\end{itemize}
+
+\vspace{0.25em}
+\cventry{ShareYourSpace \normalfont{\small(\href{https://www.shareyourspace.com}{shareyourspace.com})}}{Munich, Germany}{02.2025 -- 01.2026}
+\textit{Co-Founder and COO}
+\begin{itemize}
+    \item Co-founded a marketplace for shared and flexible office space, an Airbnb-style platform for the coworking sector.
+    \item Led day-to-day operational and product activities through the company's final year.
+    \item Negotiated and executed the sale of the company and software platform to Pixida GmbH, a prior client.
+\end{itemize}
+
+\vspace{0.25em}
+\cventry{Siemens AG}{Munich, Germany}{09.2021 -- 12.2023}
+\textit{Software Engineer, \href{https://sgi.siemens.com/home}{Siemens SGI}}
+\begin{itemize}
+    \item Designed and shipped a recommender system serving 50{,}000+ digital resources to 300{,}000+ users.
+    \item Built machine-learning and web features across the SGI platform.
+    \item Stack: Python, NumPy, TensorFlow, SQL, TypeScript, JavaScript, Angular.
+\end{itemize}
+
+%-- RESEARCH EXPERIENCE ----------------------------------------------
+\section*{Research Experience}
+
+\cventry{University of Oxford, Department of Materials}{Oxford, United Kingdom}{06.2026 -- 10.2026}
+\textit{Visiting Researcher}
+\begin{itemize}
+    \item Designing a soft, flexible bioreactor chamber for skeletal muscle tissue engineering with electrospun hollow fibre scaffolds, supporting dual perfusion and mechanical stimulation. Part of a broader DPhil project on a skeletal muscle drug testing platform. Hosted by Prof.\ Pierre-Alexis Mouthuy.
+    \item Chamber design in Fusion 360, SLA 3D printing, and soft membrane assembly. Targets clean, repeatable manufacture, leak-free operation, and force transmission from external mechanical loading systems.
+    \item Extending the brief with integrated sensing and exploratory ML for enhanced bioreactor functionality.
+\end{itemize}
+
+\vspace{0.25em}
+\cventry{Devanthro}{Munich, Germany}{03.2026 -- Present}
+\textit{Affiliated Researcher}
+\begin{itemize}
+    \item Working on control and embodied AI for Robody 5.0, the next-generation humanoid platform built on the OpenArm bimanual robotic arm.
+    \item Building an end-to-end pipeline from VR-based teleoperation through LeRobot policy training to on-hardware deployment.
+    \item Investigating data-efficient imitation learning for bimanual manipulation.
+\end{itemize}
+
+\vspace{0.25em}
+\cventry{Devanthro}{Munich, Germany}{10.2022 -- 08.2024}
+\textit{Research Student and Founder's Associate}
+\begin{itemize}
+    \item Bachelor's thesis on neural-network-based joint-space trajectory tracking for a compliant tendon-driven humanoid arm (Robody 3.0). Supervised by the \href{https://www.ce.cit.tum.de/en/air/home/}{Chair of Robotics, AI and Real-Time Systems} at TUM (Prof.\ Alois Knoll).
+    \item Co-developed Robody 4.0 (Viper arm platform): mechanical assembly, Fusion 360 CAD across structural and compliant components, and a Python script for parametric design of the elastic hull fitted over the rigid arm structure.
+    \item Supported the founders across fundraising, strategy, and general operations as Founder's Associate.
+\end{itemize}
+
+%-- TECHNICAL SKILLS -------------------------------------------------
+\section*{Technical Skills}
+
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\textbf{Programming:} & Python, Rust, C++, TypeScript, JavaScript \\[0.15em]
+\textbf{Machine Learning \& Robotics:} & PyTorch, TensorFlow, LeRobot, ROS\,2, MuJoCo \\[0.15em]
+\textbf{Fabrication \& Prototyping:} & Fusion 360, parametric CAD, SLA 3D printing, sensor integration, hardware-software integration \\[0.15em]
+\textbf{Tooling \& Systems:} & Linux, Git, Docker, NVIDIA Jetson, embedded systems \\
+\end{tabularx}
+
+%-- PERSONAL PROJECTS ------------------------------------------------
+\section*{Personal Projects}
+
+\begin{itemize}[itemsep=0.15em,topsep=0.2em]
+    \item \textbf{LeRobot SO-101 Manipulator:} End-to-end vision-language-action policy training and on-hardware deployment on the SO-101 arm using the \href{https://github.com/huggingface/lerobot}{LeRobot framework}.
+    \item \textbf{\href{https://github.com/MarcelKueck/RustyRobots}{RustyRobots}:} Open-source robotics framework for embodied AI in Rust; modular crates for perception, control, and simulation integration.
+    \item \textbf{\href{https://github.com/MarcelKueck/RustML}{RustML}:} Open-source machine-learning framework in Rust; tensor operations, automatic differentiation, and inference.
+    \item \textbf{\href{https://github.com/MarcelKueck/la_marcello}{Roasterio}:} Smart coffee-bean roaster combining a custom sensor stack with automatic roast-profile optimisation.
+    \item \textbf{\href{https://github.com/MarcelKueck/la_marcello}{LaMarcello}:} Retrofit controller converting classic espresso machines into smart, app-connected appliances; PID temperature control and flow profiling.
+    \item \textbf{\href{https://github.com/MarcelKueck/murph-app}{Murph}:} Online medical consultation platform pairing medical students with elderly users for accessible primary advice.
+    \item \textbf{Marie Lou Coffee:} Personal coffee-roasting venture; small-batch artisanal roasting, exploring a commercial launch.
+\end{itemize}
+
+%-- EDUCATION --------------------------------------------------------
+\section*{Education}
+
+\cventry{Technical University of Munich}{Munich, Germany}{10.2019 -- 05.2024}
+B.Sc.\ Computer Science. Specialisation in Robotics and Artificial Intelligence. Member of \href{https://www.tum-ai.com/}{TUM.AI}, Software Development department.
+
+\vspace{0.25em}
+\cventry{University of Oxford}{Oxford, United Kingdom}{05.2024 -- 07.2024}
+Machine Learning Summer School. Coursework and research seminars on reinforcement learning, generative AI, and machine learning in medicine. Selective admission (7\%).
+
+\vspace{0.25em}
+\cvitem{Google Machine Learning Bootcamp Europe}{07.2022 -- 11.2022}
+Three-month programme on applied machine learning. Selective admission (10\%).
+
+%-- LANGUAGES --------------------------------------------------------
+\section*{Languages}
+
+German (native) \enspace$\bullet$\enspace English (fluent, C1--C2) \enspace$\bullet$\enspace Spanish (fluent)
+
+\end{document}
